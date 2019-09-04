@@ -1,4 +1,5 @@
 <template>
+
   <v-container>
     <v-layout
       text-center
@@ -24,7 +25,7 @@
         </v-data-table>
       </v-flex>
 
-      <v-flex
+<!--       <v-flex
         mb-5
         xs12
       >
@@ -79,7 +80,7 @@
             {{ eco.text }}
           </a>
         </v-layout>
-      </v-flex>
+      </v-flex> -->
     </v-layout>
   </v-container>
 </template>
@@ -237,7 +238,7 @@ export default {
     ],
   }),
   mounted(){
-    const APIURL = 'http://stocktest.hronyun.cn/allDividend?year=2019';
+    const APIURL = 'http://stocktest.ap-northeast-2.elasticbeanstalk.com/allDividend?year=2019';
     axios.get(APIURL).then(response => {
       response.data.forEach(item =>{
         console.log(item);
