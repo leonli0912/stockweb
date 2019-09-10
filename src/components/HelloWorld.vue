@@ -1,88 +1,59 @@
 <template>
-
-  <v-container>
+    <v-card
+    class="mx-auto"
+  >
+  <v-container class="grey lighten-5">
     <v-layout
       text-center
       wrap
     >
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          今年股息率最高排名
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with investors,
-          <br>please join our online
-          <a href="http://stocktest.hronyun.cn" target="_blank">Stock Community</a>
-        </p>
-      </v-flex>
+    <v-row no-gutters>      
+        
+    </v-row>   
+    </v-layout>
+
+    <v-row
+      class="mb-6"
+      no-gutters
+    >
+    <v-col>
+      <h1 class="table_title">
+        今年股息率最高排名
+      </h1>
+ 
+    </v-col>
+  
+      <v-col
+      sm="4"      
+      >
+      <v-text-field
+        v-model="search"
+        append-icon="search"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
+      </v-col>
+    </v-row>
+    
+    <v-row no-gutters>
       <v-flex xs12>
         <v-data-table
-          :headers="headers"
-          :items="stocks"
-          :items-per-page="10"
-          class="elevation-1"
+        :headers="headers"
+        :items="stocks"
+        :items-per-page="10"
+        class="elevation-1"
         >          
         </v-data-table>
+      <p >
+        For help and collaboration please join our online
+        <a href="http://stocktest.hronyun.cn" target="_blank">Stock Community</a>
+      </p> 
       </v-flex>
-
-<!--       <v-flex
-        mb-5
-        xs12
-      >
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-layout>
-      </v-flex> -->
-    </v-layout>
+    </v-row>
   </v-container>
+
+</v-card>
 </template>
 
 <script>
@@ -263,3 +234,14 @@ function timestampToTime(timestamp) {
 }
 
 </script>
+<style type="text/css">
+.table_title {
+    float: left;
+    font-weight: normal;
+    margin-right: 12px;
+    max-width: 18em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</style>
