@@ -16,14 +16,31 @@
       class="mb-6"
       no-gutters
     >
-    <v-col>
+    <v-col sm="9">
       <h1 class="table_title">
         今年股息率最高排名
       </h1>
  
     </v-col>
-  
-      <v-col
+    <v-col sm="3">
+      <v-autocomplete
+        v-model="model"
+        :items="stockCodes"
+        :loading="isLoading"
+        :search-input.sync="search"
+        color="white"
+        hide-no-data
+        hide-selected
+        item-text="Description"
+        item-value="API"
+        label="StockCodes"
+        placeholder="Start typing to Search"
+        prepend-icon="mdi-database-search"
+        return-object
+      >        
+      </v-autocomplete>
+    </v-col>
+      <!--<v-col
       sm="4"      
       >
       <v-text-field
@@ -33,7 +50,7 @@
         single-line
         hide-details
       ></v-text-field>
-      </v-col>
+      </v-col>-->
     </v-row>
     
     <v-row no-gutters>
@@ -75,6 +92,7 @@ export default {
           { text: 'Ratio', value: 'ratio' },
     ],
     stocks:[],
+    stockCodes:['sh603328','sh600126'],
     desserts: [
           {
             name: 'Frozen Yogurt',
